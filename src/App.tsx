@@ -11,13 +11,10 @@ function App() {
             await fetchProducts();
         };
         fetchData();
-
     }, []);
 
     return (
-        <>
-            <AppRouter />
-        </>
+        <AppRouter />
     );
 }
 
