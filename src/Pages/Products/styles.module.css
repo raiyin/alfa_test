@@ -1,0 +1,14 @@
+.products {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.products__controls {
+    display: flex;
+    column-gap: 2rem;
+    justify-self: start;
+}

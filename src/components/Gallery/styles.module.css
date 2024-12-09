@@ -1,0 +1,19 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+@media screen and (width < 1000px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (width < 680px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,9 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    height: 100%;
+    font-family: Roboto;
+    font-size: xx-large;
+    font-weight: 500;
+}
