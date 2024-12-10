@@ -6,6 +6,7 @@ import { fetchProducts } from '../api/products';
 export interface ProductsState {
     products: Array<Product>;
     filter: FilterOptions;
+    searchPattern: string;
     offset: number;
     limit: number;
 }
@@ -14,6 +15,7 @@ export interface ProductsAction {
     fetchProducts: () => Promise<void>;
     getProduct: (productId: number) => Product;
     setFilter: (flag: FilterOptions) => Promise<void>;
+    setSearchPattern: (pattern: string) => void;
     addOneToProducts: (product: Product) => void;
     addManyToProducts: (products: Product[]) => void;
     deleteFromProducts: (productId: number) => void;
@@ -27,6 +29,7 @@ export const useProductsStore = create<ProductsState & ProductsAction>()(
 
             products: [],
             filter: 'all',
+            searchPattern: '',
             offset: 0,
             limit: 20,
 
@@ -44,6 +47,13 @@ export const useProductsStore = create<ProductsState & ProductsAction>()(
                 set((state) => ({
                     ...state,
                     filter: flag,
+                }));
+            },
+
+            setSearchPattern: (pattern: string) => {
+                set((state) => ({
+                    ...state,
+                    searchPattern: pattern,
                 }));
             },
 
